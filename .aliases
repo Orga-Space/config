@@ -1,0 +1,19 @@
+# include aliases file
+#
+# if [ -f ~/.aliases ]; then
+#     . ~/.aliases
+# fi
+#
+
+
+# shell
+alias c="clear"
+alias ll="ls -lah"
+alias l="ls -a"
+
+
+# GIT
+alias gt="git status"
+alias gs="git stash"
+alias gl="git log"
+alias glo="git log --online"
