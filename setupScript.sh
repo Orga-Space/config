@@ -11,13 +11,13 @@ git config --global user.email "$SETUP_EMAIL"
 
 ### prepare connection to github ###
 GITHUB_PRIVATE_KEY="${HOME}/.ssh/github-id_ed25519"
-if [ ! -f $GITHUB_PRIVATE_KEY ]; then
-        ssh-keygen -t ed25519 -C "$SETUP_EMAIL" -f "${GITHUB_PRIVATE_KEY}" -N ""
-        ssh-add $GITHUB_PRIVATE_KEY
+if [ ! -f "$GITHUB_PRIVATE_KEY" ]; then
+        ssh-keygen -t ed25519 -C "$SETUP_EMAIL" -f "$GITHUB_PRIVATE_KEY" -N ""
+        ssh-add "$GITHUB_PRIVATE_KEY"
 echo "
 Host github.com
     IdentityFile $GITHUB_PRIVATE_KEY
-" >> $HOME/.ssh/config
+" >> "${HOME}/.ssh/config"
 
 fi
 
