@@ -13,7 +13,6 @@ git config --global user.email "$SETUP_EMAIL"
 GITHUB_PRIVATE_KEY="${HOME}/.ssh/github-id_ed25519"
 if [ ! -f "$GITHUB_PRIVATE_KEY" ]; then
         ssh-keygen -t ed25519 -C "$SETUP_EMAIL" -f "$GITHUB_PRIVATE_KEY" -N ""
-        ssh-add "$GITHUB_PRIVATE_KEY"
 echo "
 Host github.com
     IdentityFile $GITHUB_PRIVATE_KEY
@@ -26,7 +25,8 @@ fi
 
 ### ssh key added to ssh agent ###
 echo ""
-echo "### check for ssh key here ###"
+echo "### copy pub key for github ###"
+ecno "https://github.com/settings/keys"
 echo ""
-ssh-add -L
+cat "${GITHUB_PRIVATE_KEY}.pub"
 echo ""
