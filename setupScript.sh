@@ -20,6 +20,11 @@ Host github.com
 
 fi
 
+### folder structure ###
+if [ ! -d "${HOME}/sandbox" ]; then
+        mkdir "${HOME}/sandbox"
+fi
+
 
 #####  post run  #####
 
